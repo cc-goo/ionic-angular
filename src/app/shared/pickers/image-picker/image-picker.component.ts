@@ -9,6 +9,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class ImagePickerComponent implements OnInit {
   selectedImage: string;
+  selectedImageWebPath: string;
   @Output() imagePick = new EventEmitter<string>();
   constructor(public alertCtrl: AlertController) { }
 
@@ -17,7 +18,7 @@ export class ImagePickerComponent implements OnInit {
   onPickImage() {
     console.log('on pick image');
     Plugins.Camera.getPhoto({
-      quality: 50,
+      quality: 90,
       source: CameraSource.Prompt,
       correctOrientation: true,
       height: 320,
@@ -25,6 +26,7 @@ export class ImagePickerComponent implements OnInit {
       resultType: CameraResultType.Base64
     }).then(image => {
       this.selectedImage = image.base64String;
+      this.selectedImageWebPath = image.webPath;
       this.imagePick.emit(image.base64String);
     }).catch(error => console.log(error));
   }
