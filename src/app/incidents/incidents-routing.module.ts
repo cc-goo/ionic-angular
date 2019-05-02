@@ -1,22 +1,25 @@
-import { IncidentsPageModule } from './incidents.module';
+import { NewIncidentPage } from './new-incident/new-incident.page';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 import { IncidentsPage } from './incidents.page';
-import { IncidentDetailPage } from './incident-detail/incident-detail.page';
+
 
 const routes: Route[] = [
     {
         path: '',
-        component: IncidentsPage,
+        component: IncidentsPage/*,
         children: [
             {
                 path: ':incidentId',
                 loadChildren: './incidents/incident-detail/incident-detail.module#IncidentDetailPageModule'
             }
-        ]
+        ]*/
     },
-  { path: 'new-incident', loadChildren: './new-incident/new-incident.module#NewIncidentPageModule' }
-
+    {
+        path: 'new',
+        component: NewIncidentPage
+    }
 ];
 
 @NgModule({

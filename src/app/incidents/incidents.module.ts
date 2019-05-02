@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { IncidentsPage } from './incidents.page';
 import { IncidentsRoutingModule } from './incidents-routing.module';
+import { NewIncidentPageModule } from './new-incident/new-incident.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { IncidentsRoutingModule } from './incidents-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    IncidentsRoutingModule
+    IncidentsRoutingModule,
+    NewIncidentPageModule
   ],
   declarations: [IncidentsPage]
 })
