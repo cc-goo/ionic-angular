@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Plugins, Capacitor, CameraSource, CameraResultType} from '@capacitor/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-image-picker',
@@ -6,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./image-picker.component.scss'],
 })
 export class ImagePickerComponent implements OnInit {
+  selectedImage: string;
+  @Output() imagePick = new EventEmitter<string>();
+  constructor(public alertCtrl: AlertController) { }
 
-  constructor() { }
-
-  ngOnInit() {}
+  ngOnInit() {
+  }
+  onPickImage() {
+    console.log('on pick image');
+    Plugins.Camera.getPhoto({
+      quality: 50,
+      source: CameraSource.Prompt,
+      correctOrientation: true,
+      height: 320,
+      width: 200,
+      resultType: CameraResultType.Base64
+    }).then(image => {
+      this.selectedImage = image.base64String;
+      this.imagePick.emit(image.base64String);
+    }).catch(error => console.log(error));
+  }
 
 }

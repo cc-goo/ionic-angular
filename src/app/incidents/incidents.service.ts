@@ -8,11 +8,11 @@ export class IncidentsService {
 
   constructor(private http: HttpClient) { }
 
-  getIncidentLocations(){
-    return  this.http.get('https://localhost:44364/api/incidents/location');
+  getIncidentLocations() {
+    return  this.http.get('https://ionic-hssepro.firebaseio.com/locations.json');
   }
 
-  getIncidentSeverities(){
-    return  this.http.get('https://localhost:44364/api/incidents/severity');
+  getIncidentSeverities() {
+    return  this.http.get('https://ionic-hssepro.firebaseio.com/severities.json');
   }
 }

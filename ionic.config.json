@@ -1,5 +1,7 @@
 {
   "name": "hsse-proto",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

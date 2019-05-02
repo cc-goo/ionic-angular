@@ -1,0 +1,8 @@
+{
+  "appId": "com.io.ionic.starter",
+  "appName": "hsse-proto",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "windowsAndroidStudioPath": "F:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe"
+}
