@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>incidents</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+    <ion-title>Incidents</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <ion-card [routerLink]="['/','incidents']">
+                  <ion-card-header>
+                      <ion-thumbnail>
+                          <img src="https://www.corruptionwatch.org.za/wp-content/themes/corruptionwatch/images/cta/cw_sidebar_cta_report_online_now.png">
+                        </ion-thumbnail>
+                    <ion-card-title>Report Incident</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-card>
+                  <ion-card-header>
+                      <ion-thumbnail>
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8xpZF_CfoKOnZRebdBJmAXgY0YFqa0wd7DFXApZIGSAz3YPPfFw">
+                        </ion-thumbnail>
+                    <ion-card-title>View Incidents</ion-card-title>
+                  </ion-card-header>
+                </ion-card>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
 </ion-content>
