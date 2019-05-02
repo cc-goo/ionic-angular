@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>new-incident</ion-title>
+    <ion-title>Report Incident</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-list-header>Incident Details</ion-list-header>
+  
+    <ion-item>
+      <ion-label>Location</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option n *ngFor="let item of LocationList" value="{{item.id}}">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Severity</ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option n *ngFor="let item of SeverityList" value="{{item.id}}">{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+  </ion-list>
 </ion-content>
