@@ -23,4 +23,8 @@ export class NewIncidentPage implements OnInit {
       (value: Severity[]) => this.SeverityList = [...value]
     );
   }
+
+  onImagePicked(imageData: string) {
+
+  }
 }
