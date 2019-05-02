@@ -9,10 +9,10 @@ export class IncidentsService {
   constructor(private http: HttpClient) { }
 
   getIncidentLocations(){
-    return  this.http.get('https://hsseproto.free.beeceptor.com/incident/location');
+    return  this.http.get('https://localhost:44364/api/incidents/location');
   }
 
   getIncidentSeverities(){
-    return  this.http.get('https://hsseproto.free.beeceptor.com/incident/severity');
+    return  this.http.get('https://localhost:44364/api/incidents/severity');
   }
 }
